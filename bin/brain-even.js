@@ -1,9 +1,4 @@
 #!/usr/bin/env node
-import playGame from '../index.js';
-import greetings from '../src/cli.js';
+import playIsEven from '../games/isEven.js';
 
-const playerName = greetings();
-
-console.log('Answer "yes" if the number is even, otherwise answer "no".');
-
-playGame(playerName);
+playIsEven();

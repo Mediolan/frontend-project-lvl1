@@ -7,4 +7,6 @@ const greetings = () => {
   return userName;
 };
 
-export default greetings;
+const playerName = greetings();
+
+export default playerName;
