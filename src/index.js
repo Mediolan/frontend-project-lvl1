@@ -1,5 +1,13 @@
 import readlineSync from 'readline-sync';
-import playerName from './cli.js';
+
+const greetings = () => {
+  console.log('Welcome to the Brain Games!');
+  const userName = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${userName}!`);
+  return userName;
+};
+
+const playerName = greetings();
 
 const generateRandomNumber = () => Math.floor(Math.random() * (100 - 0 + 1)) + 0;
 
