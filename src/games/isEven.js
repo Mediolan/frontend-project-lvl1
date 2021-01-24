@@ -7,7 +7,7 @@ const answersOnQuestions = [];
 
 const makeQuestions = () => {
   for (let i = 0; i < 3; i += 1) {
-    questions.push(generateRandomNumber());
+    questions.push(generateRandomNumber(0, 100));
     answersOnQuestions.push(isEven(questions[i]));
   }
 };
