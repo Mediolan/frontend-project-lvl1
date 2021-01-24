@@ -1,4 +1,5 @@
-install: install-deps
+install:
+	npm install
 
 brain-games:
 	node bin/brain-games.js
@@ -17,9 +18,6 @@ brain-progression:
 
 brain-prime:
 	node bin/brain-prime.js
-
-install-deps:
-	npm ci
 
 publish:
 	npm publish --dry-run
