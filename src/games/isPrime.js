@@ -9,20 +9,18 @@ const isPrime = (num) => {
   return 'yes';
 };
 
-const questions = [];
-const answersOnQuestions = [];
-
 const makeQuestions = () => {
+  const setting = { rounds: [] };
   for (let i = 0; i < 3; i += 1) {
-    questions.push(generateRandomNumber(1, 120));
-    answersOnQuestions.push(isPrime(questions[i]));
+    const randomNumber = generateRandomNumber(1, 120);
+    setting.rounds[i] = { question: randomNumber, answer: isPrime(randomNumber) };
   }
+  setting.rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+  return setting;
 };
 
 const playIsPrime = () => {
-  makeQuestions();
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-  gameEngine(questions, answersOnQuestions);
+  gameEngine(makeQuestions());
 };
 
 export default playIsPrime;

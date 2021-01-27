@@ -7,19 +7,18 @@ const greetings = () => {
   return userName;
 };
 
-const playerName = greetings();
-
 const generateRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
-const victory = `Congratulation, ${playerName}!`;
-const failure = `Let's try again, ${playerName}!`;
-
-const gameEngine = (gameQuestions, correctAnswers) => {
-  for (let i = 0; i < 3; i += 1) {
-    console.log(`Question: ${gameQuestions[i]}`);
+const gameEngine = (setting) => {
+  const playerName = greetings();
+  const victory = `Congratulation, ${playerName}!`;
+  const failure = `Let's try again, ${playerName}!`;
+  console.log(setting.rules);
+  for (let i = 0; i < setting.rounds.length; i += 1) {
+    console.log(`Question: ${setting.rounds[i].question}`);
     const playerAnswer = readlineSync.question('Your answer: ');
-    if (playerAnswer !== correctAnswers[i].toString()) {
-      console.log(`"${playerAnswer}" is wrong answer ;(. Correct answer was "${correctAnswers[i]}".`);
+    if (playerAnswer !== setting.rounds[i].answer.toString()) {
+      console.log(`"${playerAnswer}" is wrong answer ;(. Correct answer was "${setting.rounds[i].answer}".`);
       return console.log(failure);
     }
     console.log('Correct!');
