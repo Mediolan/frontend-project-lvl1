@@ -13,7 +13,7 @@ const makeQuestions = () => {
 };
 
 const playIsEven = () => {
-  gameEngine(makeQuestions());
+  gameEngine(makeQuestions);
 };
 
 export default playIsEven;

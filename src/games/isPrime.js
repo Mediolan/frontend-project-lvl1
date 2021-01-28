@@ -20,7 +20,7 @@ const makeQuestions = () => {
 };
 
 const playIsPrime = () => {
-  gameEngine(makeQuestions());
+  gameEngine(makeQuestions);
 };
 
 export default playIsPrime;

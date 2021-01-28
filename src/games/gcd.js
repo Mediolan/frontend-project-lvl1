@@ -23,7 +23,7 @@ const makeQuestions = () => {
 };
 
 const playGCD = () => {
-  gameEngine(makeQuestions());
+  gameEngine(makeQuestions);
 };
 
 export default playGCD;

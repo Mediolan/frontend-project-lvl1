@@ -9,7 +9,8 @@ const greetings = () => {
 
 const generateRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
-const gameEngine = (setting) => {
+const gameEngine = (getSetting) => {
+  const setting = getSetting();
   const playerName = greetings();
   const victory = `Congratulation, ${playerName}!`;
   const failure = `Let's try again, ${playerName}!`;

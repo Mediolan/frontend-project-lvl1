@@ -33,7 +33,7 @@ const makeQuestions = () => {
   return setting;
 };
 const playCalculator = () => {
-  gameEngine(makeQuestions());
+  gameEngine(makeQuestions);
 };
 
 export default playCalculator;

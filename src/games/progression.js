@@ -20,7 +20,7 @@ const makeQuestions = () => {
 };
 
 const playProgression = () => {
-  gameEngine(makeQuestions());
+  gameEngine(makeQuestions);
 };
 
 export default playProgression;
