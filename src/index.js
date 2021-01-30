@@ -9,17 +9,17 @@ const greetings = () => {
 
 const generateRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
-const gameEngine = (getSetting) => {
-  const setting = getSetting();
+const gameEngine = (getSettings) => {
+  const settings = getSettings();
   const playerName = greetings();
   const victory = `Congratulation, ${playerName}!`;
   const failure = `Let's try again, ${playerName}!`;
-  console.log(setting.rules);
-  for (let i = 0; i < setting.rounds.length; i += 1) {
-    console.log(`Question: ${setting.rounds[i].question}`);
+  console.log(settings.rules);
+  for (let i = 0; i < settings.rounds.length; i += 1) {
+    console.log(`Question: ${settings.rounds[i].question}`);
     const playerAnswer = readlineSync.question('Your answer: ');
-    if (playerAnswer !== setting.rounds[i].answer.toString()) {
-      console.log(`"${playerAnswer}" is wrong answer ;(. Correct answer was "${setting.rounds[i].answer}".`);
+    if (playerAnswer !== settings.rounds[i].answer.toString()) {
+      console.log(`"${playerAnswer}" is wrong answer ;(. Correct answer was "${settings.rounds[i].answer}".`);
       return console.log(failure);
     }
     console.log('Correct!');

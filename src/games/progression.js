@@ -1,8 +1,11 @@
 import { generateRandomNumber, gameEngine } from '../index.js';
 
-const makeQuestions = () => {
-  const setting = { rounds: [] };
-  for (let i = 0; i < 3; i += 1) {
+const makeQuestions = (roundsCount = 3) => {
+  const settings = {
+    rounds: [],
+    rules: 'What number is missing in the progression?',
+  };
+  for (let i = 0; i < roundsCount; i += 1) {
     const progressionLength = generateRandomNumber(5, 10);
     const startProgression = generateRandomNumber(1, 10);
     const arrayOfNum = [startProgression];
@@ -11,12 +14,11 @@ const makeQuestions = () => {
       arrayOfNum.push(arrayOfNum[j] + step);
     }
     const randomPosition = generateRandomNumber(0, progressionLength);
-    setting.rounds[i] = { answer: arrayOfNum[randomPosition] };
+    settings.rounds[i] = { answer: arrayOfNum[randomPosition] };
     arrayOfNum[randomPosition] = '..';
-    setting.rounds[i].question = arrayOfNum.join(' ');
+    settings.rounds[i].question = arrayOfNum.join(' ');
   }
-  setting.rules = 'What number is missing in the progression?';
-  return setting;
+  return settings;
 };
 
 const playProgression = () => {
