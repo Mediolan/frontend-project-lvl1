@@ -14,8 +14,8 @@ const makeQuestions = (roundsCount = 3) => {
     rules: 'Find the greatest common divisor of given numbers.',
   };
   for (let i = 0; i < roundsCount; i += 1) {
-    const randomNumber1 = generateRandomNumber(0, 100);
-    const randomNumber2 = generateRandomNumber(0, 100);
+    const randomNumber1 = generateRandomNumber(1, 100);
+    const randomNumber2 = generateRandomNumber(1, 100);
     settings.rounds[i] = {
       question: `${randomNumber1} ${randomNumber2}`,
       answer: findHighestDevider(randomNumber1, randomNumber2),

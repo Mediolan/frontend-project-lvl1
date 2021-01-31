@@ -7,7 +7,7 @@ const makeQuestions = (roundsCount = 3) => {
     rules: 'What is the result of the expression?',
   };
   for (let i = 0; i < roundsCount; i += 1) {
-    const randomOperator = possibleOperators[generateRandomNumber(0, possibleOperators.length)];
+    const randomOperator = possibleOperators[generateRandomNumber(0, possibleOperators.length - 1)];
     const randomNumber1 = generateRandomNumber(0, 100);
     const randomNumber2 = generateRandomNumber(0, 100);
     switch (randomOperator) {
