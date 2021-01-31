@@ -24,7 +24,7 @@ const gameEngine = (getSettings) => {
     }
     console.log('Correct!');
   }
-  console.log(victory);
+  return console.log(victory);
 };
 
 export { generateRandomNumber, gameEngine };

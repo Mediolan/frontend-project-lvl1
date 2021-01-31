@@ -2,22 +2,22 @@ install:
 	npm install
 
 brain-games:
-	bin/brain-games.js
+	./bin/brain-games.js
 
 brain-even:
-	bin/brain-even.js
+	./bin/brain-even.js
 
 brain-calc:
-	bin/brain-calc.js
+	./bin/brain-calc.js
 
 brain-gcd:
-	bin/brain-gcd.js
+	./bin/brain-gcd.js
 
 brain-progression:
-	bin/brain-progression.js
+	./bin/brain-progression.js
 
 brain-prime:
-	bin/brain-prime.js
+	./bin/brain-prime.js
 
 publish:
 	npm publish --dry-run
