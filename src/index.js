@@ -12,7 +12,7 @@ const generateRandomNumber = (min, max) => Math.floor(Math.random() * (max - min
 const gameEngine = (getSettings) => {
   const settings = getSettings();
   const playerName = greetings();
-  const victory = `Congratulation, ${playerName}!`;
+  const victory = `Congratulations, ${playerName}!`;
   const failure = `Let's try again, ${playerName}!`;
   console.log(settings.rules);
   for (let i = 0; i < settings.rounds.length; i += 1) {
