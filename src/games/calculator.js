@@ -1,7 +1,7 @@
 import gameEngine from '../index.js';
 import generateRandomNumber from '../utils.js';
 
-const makeSettigns = (roundsCount = 3) => {
+const makeSettigns = (roundsCount) => {
   const possibleOperators = '+-*';
   const settings = {
     rounds: [],

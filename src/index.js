@@ -4,7 +4,7 @@ const gameEngine = (getSettings) => {
   console.log('Welcome to the Brain Games!');
   const playerName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${playerName}!`);
-  const settings = getSettings();
+  const settings = getSettings(3);
   const victory = `Congratulations, ${playerName}!`;
   const failure = `Let's try again, ${playerName}!`;
   console.log(settings.rule);

@@ -3,7 +3,7 @@ import generateRandomNumber from '../utils.js';
 
 const isEven = (num) => (num % 2 === 0 ? 'yes' : 'no');
 
-const makeSettigns = (roundsCount = 3) => {
+const makeSettigns = (roundsCount) => {
   const settings = {
     rounds: [],
     rule: 'Answer "yes" if the number is even, otherwise answer "no".',
