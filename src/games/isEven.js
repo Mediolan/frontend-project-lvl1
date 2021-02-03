@@ -3,7 +3,7 @@ import generateRandomNumber from '../utils.js';
 
 const isEven = (num) => (num % 2 === 0 ? 'yes' : 'no');
 
-const makeSettins = (roundsCount = 3) => {
+const makeSettigns = (roundsCount = 3) => {
   const settings = {
     rounds: [],
     rule: 'Answer "yes" if the number is even, otherwise answer "no".',
@@ -16,7 +16,7 @@ const makeSettins = (roundsCount = 3) => {
 };
 
 const playIsEven = () => {
-  gameEngine(makeSettins);
+  gameEngine(makeSettigns);
 };
 
 export default playIsEven;

@@ -13,7 +13,7 @@ const isPrime = (num) => {
   return true;
 };
 
-const makeSettins = (roundsCount = 3) => {
+const makeSettigns = (roundsCount = 3) => {
   const settings = {
     rounds: [],
     rule: 'Answer "yes" if given number is prime. Otherwise answer "no".',
@@ -27,7 +27,7 @@ const makeSettins = (roundsCount = 3) => {
 };
 
 const playIsPrime = () => {
-  gameEngine(makeSettins);
+  gameEngine(makeSettigns);
 };
 
 export default playIsPrime;

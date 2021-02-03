@@ -1,7 +1,7 @@
 import gameEngine from '../index.js';
 import generateRandomNumber from '../utils.js';
 
-const makeSettins = (roundsCount = 3) => {
+const makeSettigns = (roundsCount = 3) => {
   const settings = {
     rounds: [],
     rule: 'What number is missing in the progression?',
@@ -23,7 +23,7 @@ const makeSettins = (roundsCount = 3) => {
 };
 
 const playProgression = () => {
-  gameEngine(makeSettins);
+  gameEngine(makeSettigns);
 };
 
 export default playProgression;
