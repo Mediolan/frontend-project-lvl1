@@ -13,11 +13,12 @@ const gameEngine = (getSettings) => {
     const playerAnswer = readlineSync.question('Your answer: ');
     if (playerAnswer !== settings.rounds[i].answer) {
       console.log(`"${playerAnswer}" is wrong answer ;(. Correct answer was "${settings.rounds[i].answer}".`);
-      return console.log(failure);
+      console.log(failure);
+      return;
     }
     console.log('Correct!');
   }
-  return console.log(victory);
+  console.log(victory);
 };
 
 export default gameEngine;
