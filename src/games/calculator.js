@@ -1,10 +1,11 @@
-import { generateRandomNumber, gameEngine } from '../index.js';
+import gameEngine from '../index.js';
+import generateRandomNumber from '../utils.js';
 
-const makeQuestions = (roundsCount = 3) => {
+const makeSettins = (roundsCount = 3) => {
   const possibleOperators = '+-*';
   const settings = {
     rounds: [],
-    rules: 'What is the result of the expression?',
+    rule: 'What is the result of the expression?',
   };
   for (let i = 0; i < roundsCount; i += 1) {
     const randomOperator = possibleOperators[generateRandomNumber(0, possibleOperators.length - 1)];
@@ -14,19 +15,19 @@ const makeQuestions = (roundsCount = 3) => {
       case '+':
         settings.rounds[i] = {
           question: `${randomNumber1} ${randomOperator} ${randomNumber2}`,
-          answer: randomNumber1 + randomNumber2,
+          answer: (randomNumber1 + randomNumber2).toString(),
         };
         break;
       case '-':
         settings.rounds[i] = {
           question: `${randomNumber1} ${randomOperator} ${randomNumber2}`,
-          answer: randomNumber1 - randomNumber2,
+          answer: (randomNumber1 - randomNumber2).toString(),
         };
         break;
       case '*':
         settings.rounds[i] = {
           question: `${randomNumber1} ${randomOperator} ${randomNumber2}`,
-          answer: randomNumber1 * randomNumber2,
+          answer: (randomNumber1 * randomNumber2).toString(),
         };
         break;
       default:
@@ -35,7 +36,7 @@ const makeQuestions = (roundsCount = 3) => {
   return settings;
 };
 const playCalculator = () => {
-  gameEngine(makeQuestions);
+  gameEngine(makeSettins);
 };
 
 export default playCalculator;

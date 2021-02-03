@@ -1,28 +1,29 @@
-import { generateRandomNumber, gameEngine } from '../index.js';
+import gameEngine from '../index.js';
+import generateRandomNumber from '../utils.js';
 
-const makeQuestions = (roundsCount = 3) => {
+const makeSettins = (roundsCount = 3) => {
   const settings = {
     rounds: [],
-    rules: 'What number is missing in the progression?',
+    rule: 'What number is missing in the progression?',
   };
   for (let i = 0; i < roundsCount; i += 1) {
     const progressionLength = generateRandomNumber(5, 10);
     const startProgression = generateRandomNumber(1, 10);
-    const arrayOfNum = [startProgression];
+    const progression = [startProgression];
     const step = generateRandomNumber(2, 10);
     for (let j = 0; j < progressionLength; j += 1) {
-      arrayOfNum.push(arrayOfNum[j] + step);
+      progression.push(progression[j] + step);
     }
     const randomPosition = generateRandomNumber(0, progressionLength);
-    settings.rounds[i] = { answer: arrayOfNum[randomPosition] };
-    arrayOfNum[randomPosition] = '..';
-    settings.rounds[i].question = arrayOfNum.join(' ');
+    settings.rounds[i] = { answer: progression[randomPosition].toString() };
+    progression[randomPosition] = '..';
+    settings.rounds[i].question = progression.join(' ');
   }
   return settings;
 };
 
 const playProgression = () => {
-  gameEngine(makeQuestions);
+  gameEngine(makeSettins);
 };
 
 export default playProgression;

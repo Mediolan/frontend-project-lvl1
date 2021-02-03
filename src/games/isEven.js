@@ -1,11 +1,12 @@
-import { generateRandomNumber, gameEngine } from '../index.js';
+import gameEngine from '../index.js';
+import generateRandomNumber from '../utils.js';
 
 const isEven = (num) => (num % 2 === 0 ? 'yes' : 'no');
 
-const makeQuestions = (roundsCount = 3) => {
+const makeSettins = (roundsCount = 3) => {
   const settings = {
     rounds: [],
-    rules: 'Answer "yes" if the number is even, otherwise answer "no".',
+    rule: 'Answer "yes" if the number is even, otherwise answer "no".',
   };
   for (let i = 0; i < roundsCount; i += 1) {
     const randomNumber = generateRandomNumber(0, 100);
@@ -15,7 +16,7 @@ const makeQuestions = (roundsCount = 3) => {
 };
 
 const playIsEven = () => {
-  gameEngine(makeQuestions);
+  gameEngine(makeSettins);
 };
 
 export default playIsEven;
