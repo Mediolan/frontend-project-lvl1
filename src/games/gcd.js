@@ -1,5 +1,5 @@
 import gameEngine from '../index.js';
-import generateRandomNumber from '../utils.js';
+import generateRandomNumber from '../generateRandomNumber.js';
 
 const findGCD = (num1, num2) => {
   let divider = (num1 > num2 ? num2 : num1);

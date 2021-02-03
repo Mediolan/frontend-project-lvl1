@@ -1,5 +1,5 @@
 import gameEngine from '../index.js';
-import generateRandomNumber from '../utils.js';
+import generateRandomNumber from '../generateRandomNumber.js';
 
 const makeSettigns = (roundsCount) => {
   const settings = {
