@@ -9,7 +9,7 @@ const findGCD = (num1, num2) => {
   return divider;
 };
 
-const makeSettigns = (roundsCount) => {
+const makeGameSettings = (roundsCount) => {
   const settings = {
     rounds: [],
     rule: 'Find the greatest common divisor of given numbers.',
@@ -26,7 +26,7 @@ const makeSettigns = (roundsCount) => {
 };
 
 const playGCD = () => {
-  gameEngine(makeSettigns);
+  gameEngine(makeGameSettings);
 };
 
 export default playGCD;

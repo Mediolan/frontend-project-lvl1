@@ -1,22 +1,23 @@
 import gameEngine from '../index.js';
 import generateRandomNumber from '../generateRandomNumber.js';
 
-const isEven = (num) => (num % 2 === 0 ? 'yes' : 'no');
+const isEven = (num) => num % 2 === 0;
 
-const makeSettigns = (roundsCount) => {
+const makeGameSettings = (roundsCount) => {
   const settings = {
     rounds: [],
     rule: 'Answer "yes" if the number is even, otherwise answer "no".',
   };
   for (let i = 0; i < roundsCount; i += 1) {
     const randomNumber = generateRandomNumber(0, 100);
-    settings.rounds[i] = { question: randomNumber, answer: isEven(randomNumber) };
+    const answer = isEven(randomNumber) ? 'yes' : 'no';
+    settings.rounds[i] = { question: randomNumber, answer };
   }
   return settings;
 };
 
 const playIsEven = () => {
-  gameEngine(makeSettigns);
+  gameEngine(makeGameSettings);
 };
 
 export default playIsEven;

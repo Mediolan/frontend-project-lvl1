@@ -1,7 +1,7 @@
 import gameEngine from '../index.js';
 import generateRandomNumber from '../generateRandomNumber.js';
 
-const makeSettigns = (roundsCount) => {
+const makeGameSettings = (roundsCount) => {
   const possibleOperators = '+-*';
   const settings = {
     rounds: [],
@@ -36,7 +36,7 @@ const makeSettigns = (roundsCount) => {
   return settings;
 };
 const playCalculator = () => {
-  gameEngine(makeSettigns);
+  gameEngine(makeGameSettings);
 };
 
 export default playCalculator;
